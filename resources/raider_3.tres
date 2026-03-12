@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="RaiderResource" format=3 uid="uid://dlxrmqxbgwpdf"]
+
+[ext_resource type="Script" uid="uid://ct2ykentqlyxe" path="res://resources/raider_config.gd" id="1_enns6"]
+[ext_resource type="Texture2D" uid="uid://uk8crdfsv4qs" path="res://graphics/enemies/enemy_three-sheet.png" id="2_enns6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvtnm"]
+atlas = ExtResource("2_enns6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnmp7"]
+atlas = ExtResource("2_enns6")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iskis"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvtnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnmp7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[resource]
+script = ExtResource("1_enns6")
+sprite = SubResource("SpriteFrames_iskis")
+anim_name = "raider_3"
+points = 20

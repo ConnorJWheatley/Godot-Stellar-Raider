@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c2ef7gsa30hc"]
+
+[ext_resource type="Script" uid="uid://tdcrp8ejg5nt" path="res://scripts/laser_stop.gd" id="1_kdp5q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o51ux"]
+size = Vector2(426, 7)
+
+[node name="LaserStop" type="Area2D" unique_id=1176699284]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_kdp5q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=943331605]
+position = Vector2(0, -120)
+shape = SubResource("RectangleShape2D_o51ux")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

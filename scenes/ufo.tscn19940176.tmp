@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://hxf0j3shxj5j"]
+
+[ext_resource type="Script" uid="uid://dvpa483rwfpv" path="res://scripts/ufo.gd" id="1_xf4xf"]
+[ext_resource type="Texture2D" uid="uid://cebmlrt6pqk6l" path="res://graphics/enemies/ufo.png" id="2_gp6nc"]
+[ext_resource type="Script" uid="uid://csg2oo7pv7ahf" path="res://scenes/ufo_laser.gd" id="3_1aa4c"]
+[ext_resource type="Script" uid="uid://ba6d8soiivt05" path="res://scripts/spawn_timer.gd" id="4_vvsiw"]
+[ext_resource type="Texture2D" uid="uid://dnrvo4m8tdr6o" path="res://graphics/enemies/ufo-death.png" id="5_vvsiw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1aa4c"]
+size = Vector2(14, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_linyg"]
+atlas = ExtResource("5_vvsiw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkk3j"]
+atlas = ExtResource("5_vvsiw")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ai8vk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_linyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkk3j")
+}],
+"loop": true,
+"name": &"destroy_ufo",
+"speed": 8.0
+}]
+
+[node name="Ufo" type="Area2D" unique_id=1114984253]
+collision_layer = 64
+collision_mask = 2
+script = ExtResource("1_xf4xf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=701136055]
+texture = ExtResource("2_gp6nc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1727382344]
+shape = SubResource("RectangleShape2D_1aa4c")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=540666191]
+
+[node name="LaserPoint" type="Node2D" parent="." unique_id=1136882073]
+position = Vector2(0, 6)
+script = ExtResource("3_1aa4c")
+
+[node name="SpawnTimer" type="Timer" parent="LaserPoint" unique_id=1657961292]
+script = ExtResource("4_vvsiw")
+min_time = 1
+max_time = 3
+metadata/_custom_type_script = "uid://ba6d8soiivt05"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1802635672]
+sprite_frames = SubResource("SpriteFrames_ai8vk")
+animation = &"destroy_ufo"
+frame = 1
+frame_progress = 0.8313389
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

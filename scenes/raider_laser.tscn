@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://tom3f85ewp81"]
+
+[ext_resource type="Script" uid="uid://c08ruo26ge3gr" path="res://scripts/raider_laser.gd" id="1_xhiyq"]
+[ext_resource type="Texture2D" uid="uid://c0jpqrv1soqrd" path="res://graphics/enemies/ufo_laser.png" id="2_xhiyq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p274h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xhiyq")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="RaiderLaser" type="Area2D" unique_id=1452227541]
+collision_layer = 8
+script = ExtResource("1_xhiyq")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=223762144]
+sprite_frames = SubResource("SpriteFrames_p274h")
+frame_progress = 0.60208404
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=1873696944]
+position = Vector2(0, -0.5)
+polygon = PackedVector2Array(-1, -1.5, -1, 2.5, 0, 2.5, 0, -1.5, 1, -1.5, 1, -2.5, -2, -2.5, -2, -1.5)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=17994504]
+rect = Rect2(-2.25, -4, 3.5, 7)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

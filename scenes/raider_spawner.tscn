@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://butyo52j5qkwa"]
+
+[ext_resource type="Script" uid="uid://bcjre8u47tb2r" path="res://raider_spawner.gd" id="1_ec7gm"]
+
+[node name="RaiderSpawner" type="Node2D" unique_id=1242198397]
+script = ExtResource("1_ec7gm")
+
+[node name="MovementTimer" type="Timer" parent="." unique_id=1611868277]
+wait_time = 0.75
+autostart = true
+
+[node name="LaserTimer" type="Timer" parent="." unique_id=1101698129]
+autostart = true
