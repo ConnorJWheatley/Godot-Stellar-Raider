@@ -4,7 +4,7 @@ extends Node2D
 
 var can_player_shoot = true
 
-func _input(event):
+func _input(_event):
 	if Input.is_action_just_pressed("shoot") && can_player_shoot:
 		can_player_shoot = false
 		var laser = laser_scene.instantiate() as Laser

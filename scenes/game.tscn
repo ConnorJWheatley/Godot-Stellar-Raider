@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://butyo52j5qkwa" path="res://scenes/raider_spawner.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://c2ef7gsa30hc" path="res://scenes/laser_stop.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://dsii7oh5ti0tl" path="res://scenes/ufo_spawner.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://bw8loavyfpald" path="res://scenes/menus/pause_menu.tscn" id="7_u5sy4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhrr"]
 size = Vector2(14, 242)
@@ -58,6 +59,8 @@ shape = SubResource("RectangleShape2D_iywne")
 
 [node name="UfoSpawner" parent="." unique_id=438315381 instance=ExtResource("6_p57ef")]
 position = Vector2(-198, -111)
+
+[node name="CanvasLayer" parent="." unique_id=1334335927 instance=ExtResource("7_u5sy4")]
 
 [connection signal="area_entered" from="Walls/RightWall" to="RaiderSpawner" method="_on_right_wall_area_entered"]
 [connection signal="area_entered" from="Walls/LeftWall" to="RaiderSpawner" method="_on_left_wall_area_entered"]
