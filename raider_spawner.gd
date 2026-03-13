@@ -62,7 +62,7 @@ func _ready() -> void:
 			
 			spawn_raider(raider_config, spawn_pos)
 			
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	# if the y_increment count reaches certain values, decrease the movement timer
 	#f y_increment_count
 	pass
@@ -77,13 +77,13 @@ func move_invaders():
 	position.x += RAIDERS_POSITION_X_INCREMENT * direction
 	
 # each time it bounces, keep count so that after a certain amount of time I can decrease the timer to make the movement faster
-func _on_right_wall_area_entered(area: Area2D) -> void:
+func _on_right_wall_area_entered(_area: Area2D) -> void:
 	if (direction == 1):
 		position.y += RAIDERS_POSITION_Y_INCREMENT
 		direction *= -1
 		y_increment_count += 1
 
-func _on_left_wall_area_entered(area: Area2D) -> void:
+func _on_left_wall_area_entered(_area: Area2D) -> void:
 	if (direction == -1):
 		position.y += RAIDERS_POSITION_Y_INCREMENT
 		direction *= -1

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://reg3ui8c1rth"]
 
 [ext_resource type="Texture2D" uid="uid://cenv87xgkm7uu" path="res://graphics/main_menu_bg.png" id="1_bqqt6"]
-[ext_resource type="Script" uid="uid://dpwalvkly3wpj" path="res://scenes/main_menu.gd" id="1_wu84c"]
+[ext_resource type="Script" uid="uid://dpwalvkly3wpj" path="res://scenes/menus/main_menu.gd" id="1_wu84c"]
 [ext_resource type="FontFile" uid="uid://d0nqhks0vdhqw" path="res://fonts/RETROTECH.ttf" id="2_wu84c"]
 [ext_resource type="FontFile" uid="uid://defnbh00bnf7a" path="res://fonts/abduction2002.ttf" id="3_8ln24"]
 
@@ -19,6 +19,7 @@ bg_color = Color(0.5729883, 0.5729883, 0.57298815, 1)
 bg_color = Color(0.7666196, 0.7666196, 0.76661927, 1)
 
 [node name="MainMenu" type="Control" unique_id=1815135788]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
