@@ -16,5 +16,4 @@ func _on_area_entered(area: Area2D) -> void:
 		$CollisionShape2D.queue_free() # removes the hurtbox so lasers can pass through the death anim
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	# doesn't seem to need a check here
 	queue_free()

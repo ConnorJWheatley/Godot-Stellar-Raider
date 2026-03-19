@@ -24,7 +24,7 @@ texture = ExtResource("1_yqjtg")
 position = Vector2(-165, 97)
 
 [node name="RaiderSpawner" parent="." unique_id=2123867069 instance=ExtResource("3_lnu2h")]
-position = Vector2(0, -85)
+position = Vector2(0, -70)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=996137260]
 
