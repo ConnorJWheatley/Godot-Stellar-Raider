@@ -10,8 +10,8 @@ func _ready() -> void:
 
 func on_spawn_timer_timeout():
 	var laser = laser_scene.instantiate()
-	#var laser_sprite = laser.get_node("2D") as Sprite2D
-	#laser_sprite.modulate = Color(0.627, 0.235, 0.533)
+	var laser_sprite = laser.get_child(0)
+	laser_sprite.modulate = Color(0.627, 0.235, 0.533)
 	laser.global_position = global_position
 	get_tree().root.add_child(laser)
 	spawn_timer.setup_timer()
