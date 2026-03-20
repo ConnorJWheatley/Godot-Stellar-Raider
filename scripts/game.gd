@@ -2,7 +2,7 @@ extends Node2D
 
 class_name Game
 
-@onready var pause_menu = $CanvasLayer/PauseMenu
+@onready var pause_menu = $PauseMenu
 var pause_toggle = false
 
 # Called when the node enters the scene tree for the first time.

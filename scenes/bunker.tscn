@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://kxvhungcv55x"]
+
+[ext_resource type="Texture2D" uid="uid://d3hkqjycyh23r" path="res://graphics/bunker_square.png" id="1_764y3"]
+[ext_resource type="Script" uid="uid://bw58alxg4ex1o" path="res://scripts/bunker_square.gd" id="1_ewk1p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ewk1p"]
+size = Vector2(5, 5)
+
+[node name="Bunker" type="Node2D" unique_id=1660440459]
+
+[node name="BunkerSquare1" type="Area2D" parent="." unique_id=525415404]
+collision_layer = 16
+collision_mask = 14
+script = ExtResource("1_ewk1p")
+
+[node name="Sprite2D" type="Sprite2D" parent="BunkerSquare1" unique_id=898480398]
+texture = ExtResource("1_764y3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BunkerSquare1" unique_id=285856549]
+shape = SubResource("RectangleShape2D_ewk1p")
+
+[node name="BunkerSquare2" type="Area2D" parent="." unique_id=935469885]
+collision_layer = 16
+collision_mask = 14
+script = ExtResource("1_ewk1p")
+
+[node name="Sprite2D" type="Sprite2D" parent="BunkerSquare2" unique_id=200736781]
+position = Vector2(0, -6)
+texture = ExtResource("1_764y3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BunkerSquare2" unique_id=427833113]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_ewk1p")
+
+[node name="BunkerSquare3" type="Area2D" parent="." unique_id=471986694]
+collision_layer = 16
+collision_mask = 14
+script = ExtResource("1_ewk1p")
+
+[node name="Sprite2D" type="Sprite2D" parent="BunkerSquare3" unique_id=2096424845]
+position = Vector2(6, -3)
+texture = ExtResource("1_764y3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BunkerSquare3" unique_id=1273826804]
+position = Vector2(6, -3)
+shape = SubResource("RectangleShape2D_ewk1p")
+
+[node name="BunkerSquare4" type="Area2D" parent="." unique_id=1639635000]
+collision_layer = 16
+collision_mask = 14
+script = ExtResource("1_ewk1p")
+
+[node name="Sprite2D" type="Sprite2D" parent="BunkerSquare4" unique_id=474658064]
+position = Vector2(12, -3)
+texture = ExtResource("1_764y3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BunkerSquare4" unique_id=812216957]
+position = Vector2(12, -3)
+shape = SubResource("RectangleShape2D_ewk1p")
+
+[node name="BunkerSquare5" type="Area2D" parent="." unique_id=2019541641]
+collision_layer = 16
+collision_mask = 14
+script = ExtResource("1_ewk1p")
+
+[node name="Sprite2D" type="Sprite2D" parent="BunkerSquare5" unique_id=1975705706]
+position = Vector2(18, 0)
+texture = ExtResource("1_764y3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BunkerSquare5" unique_id=565936208]
+position = Vector2(18, 0)
+shape = SubResource("RectangleShape2D_ewk1p")
+
+[node name="BunkerSquare6" type="Area2D" parent="." unique_id=1156155279]
+collision_layer = 16
+collision_mask = 14
+script = ExtResource("1_ewk1p")
+
+[node name="Sprite2D" type="Sprite2D" parent="BunkerSquare6" unique_id=1924800476]
+position = Vector2(18, -6)
+texture = ExtResource("1_764y3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BunkerSquare6" unique_id=1425256504]
+position = Vector2(18, -6)
+shape = SubResource("RectangleShape2D_ewk1p")
+
+[node name="BunkerSquare7" type="Area2D" parent="." unique_id=1505200356]
+collision_layer = 16
+collision_mask = 14
+script = ExtResource("1_ewk1p")
+
+[node name="Sprite2D" type="Sprite2D" parent="BunkerSquare7" unique_id=47789482]
+position = Vector2(6, -9)
+texture = ExtResource("1_764y3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BunkerSquare7" unique_id=531331466]
+position = Vector2(6, -9)
+shape = SubResource("RectangleShape2D_ewk1p")
+
+[node name="BunkerSquare8" type="Area2D" parent="." unique_id=1603575892]
+collision_layer = 16
+collision_mask = 14
+script = ExtResource("1_ewk1p")
+
+[node name="Sprite2D" type="Sprite2D" parent="BunkerSquare8" unique_id=1134816994]
+position = Vector2(12, -9)
+texture = ExtResource("1_764y3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BunkerSquare8" unique_id=136509469]
+position = Vector2(12, -9)
+shape = SubResource("RectangleShape2D_ewk1p")
+
+[node name="BunkerSquare9" type="Area2D" parent="." unique_id=1648414483]
+collision_layer = 16
+collision_mask = 14
+script = ExtResource("1_ewk1p")
+
+[node name="Sprite2D" type="Sprite2D" parent="BunkerSquare9" unique_id=1864137083]
+position = Vector2(6, -15)
+texture = ExtResource("1_764y3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BunkerSquare9" unique_id=166368839]
+position = Vector2(6, -15)
+shape = SubResource("RectangleShape2D_ewk1p")
+
+[node name="BunkerSquare10" type="Area2D" parent="." unique_id=776970133]
+collision_layer = 16
+collision_mask = 14
+script = ExtResource("1_ewk1p")
+
+[node name="Sprite2D" type="Sprite2D" parent="BunkerSquare10" unique_id=1694389630]
+position = Vector2(12, -15)
+texture = ExtResource("1_764y3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BunkerSquare10" unique_id=690555617]
+position = Vector2(12, -15)
+shape = SubResource("RectangleShape2D_ewk1p")
+
+[node name="BunkerSquare11" type="Area2D" parent="." unique_id=242700446]
+collision_layer = 16
+collision_mask = 14
+script = ExtResource("1_ewk1p")
+
+[node name="Sprite2D" type="Sprite2D" parent="BunkerSquare11" unique_id=1567338814]
+position = Vector2(6, -21)
+texture = ExtResource("1_764y3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BunkerSquare11" unique_id=1550688934]
+position = Vector2(6, -21)
+shape = SubResource("RectangleShape2D_ewk1p")
+
+[node name="BunkerSquare12" type="Area2D" parent="." unique_id=170225914]
+collision_layer = 16
+collision_mask = 14
+script = ExtResource("1_ewk1p")
+
+[node name="Sprite2D" type="Sprite2D" parent="BunkerSquare12" unique_id=1942052465]
+position = Vector2(12, -21)
+texture = ExtResource("1_764y3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BunkerSquare12" unique_id=1560843965]
+position = Vector2(12, -21)
+shape = SubResource("RectangleShape2D_ewk1p")
