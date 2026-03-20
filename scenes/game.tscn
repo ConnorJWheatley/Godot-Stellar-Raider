@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c2ef7gsa30hc" path="res://scenes/laser_stop.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://dsii7oh5ti0tl" path="res://scenes/ufo_spawner.tscn" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://bw8loavyfpald" path="res://scenes/menus/pause_menu.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://kxvhungcv55x" path="res://scenes/bunker.tscn" id="8_gee14"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhrr"]
 size = Vector2(14, 242)
@@ -60,7 +61,18 @@ shape = SubResource("RectangleShape2D_iywne")
 [node name="UfoSpawner" parent="." unique_id=438315381 instance=ExtResource("6_p57ef")]
 position = Vector2(-198, -111)
 
-[node name="CanvasLayer" parent="." unique_id=1334335927 instance=ExtResource("7_u5sy4")]
+[node name="PauseMenu" parent="." unique_id=1334335927 instance=ExtResource("7_u5sy4")]
+
+[node name="Bunkers" type="Node" parent="." unique_id=1840579841]
+
+[node name="LeftBunker" parent="Bunkers" unique_id=1660440459 instance=ExtResource("8_gee14")]
+position = Vector2(-96, 77)
+
+[node name="MiddleBunker" parent="Bunkers" unique_id=193849469 instance=ExtResource("8_gee14")]
+position = Vector2(-9, 77)
+
+[node name="RightBunker" parent="Bunkers" unique_id=955593296 instance=ExtResource("8_gee14")]
+position = Vector2(78, 77)
 
 [connection signal="area_entered" from="Walls/RightWall" to="RaiderSpawner" method="_on_right_wall_area_entered"]
 [connection signal="area_entered" from="Walls/LeftWall" to="RaiderSpawner" method="_on_left_wall_area_entered"]
