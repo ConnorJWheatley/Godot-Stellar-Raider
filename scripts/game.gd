@@ -12,7 +12,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.d
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
-		print("I HAVE BEEN PRESSED")
 		toggle_pause()
 
 func toggle_pause():

@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dvx7gogrrxny1"]
+
+[ext_resource type="Script" uid="uid://bxaely37yycnl" path="res://scenes/menus/game_over_menu.gd" id="1_ufkiq"]
+[ext_resource type="FontFile" uid="uid://defnbh00bnf7a" path="res://fonts/abduction2002.ttf" id="1_yytlj"]
+[ext_resource type="FontFile" uid="uid://d0nqhks0vdhqw" path="res://fonts/RETROTECH.ttf" id="2_ufkiq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2a6mq"]
+bg_color = Color(0, 0, 0, 0.49019608)
+
+[node name="GameOverMenu" type="Control" unique_id=1647633385]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ufkiq")
+
+[node name="Panel" type="Panel" parent="." unique_id=947266285]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2a6mq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1395438069]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=1508607949]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_yytlj")
+theme_override_font_sizes/font_size = 30
+text = "GAME OVER"
+
+[node name="PlayAgainBtn" type="Button" parent="Panel/VBoxContainer" unique_id=555530689]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ufkiq")
+theme_override_font_sizes/font_size = 18
+text = "PLAY AGAIN"
+vertical_icon_alignment = 2
+
+[node name="BackToMenuBtn" type="Button" parent="Panel/VBoxContainer" unique_id=1591141263]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ufkiq")
+theme_override_font_sizes/font_size = 18
+text = "BACK TO MAIN MENU"
+vertical_icon_alignment = 2
+
+[connection signal="pressed" from="Panel/VBoxContainer/PlayAgainBtn" to="." method="_on_play_again_btn_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/BackToMenuBtn" to="." method="_on_back_to_menu_btn_pressed"]

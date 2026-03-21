@@ -91,6 +91,6 @@ func _on_left_wall_area_entered(_area: Area2D) -> void:
 
 func on_raider_shoot():
 	var random_raider_position = get_children().filter(func (child): return child is Raider).map(func (raider): return raider.global_position).pick_random()
-	var raider_laser = raider_laser.instantiate() as RaiderLaser
-	raider_laser.global_position = random_raider_position
-	get_tree().root.add_child(raider_laser)
+	var laser = raider_laser.instantiate() as RaiderLaser
+	laser.global_position = random_raider_position
+	get_tree().root.add_child(laser)
