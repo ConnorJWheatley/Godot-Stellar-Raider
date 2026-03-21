@@ -3,7 +3,6 @@ extends Area2D
 class_name Ufo
 
 @export var speed = 75
-#@onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var laser_point: Node2D = $LaserPoint
 @onready var animated_sprite = $AnimatedSprite2D
 
@@ -24,5 +23,4 @@ func _on_area_entered(area: Area2D) -> void:
 		speed = 0
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	print("I am being reached")
 	queue_free()
