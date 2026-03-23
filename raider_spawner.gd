@@ -107,6 +107,17 @@ func on_raider_destroyed(points: int):
 	raider_destroyed.emit(points)
 	raider_destroyed_count += 1
 	
+	if raider_destroyed_count == 15:
+		movement_timer.wait_time -= 0.15
+	if raider_destroyed_count == 29:
+		movement_timer.wait_time -= 0.15
+	if raider_destroyed_count == 32:
+		movement_timer.wait_time -= 0.15
+	if raider_destroyed_count == 33:
+		movement_timer.wait_time -= 0.15
+	if raider_destroyed_count > 34:
+		movement_timer.wait_time -= 0.1
+	
 	if raider_destroyed_count == raider_total_count:
 		game_won.emit()
 		laser_timer.stop()
