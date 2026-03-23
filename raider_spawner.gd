@@ -2,6 +2,10 @@ extends Node2D
 
 class_name RaiderSpawner
 
+signal raider_destroyed(points: int)
+signal game_won
+signal game_lost
+
 # spawner configuration
 const ROWS = 6
 const COLS = 6
@@ -18,6 +22,9 @@ var raider_scene = preload("res://scenes/raider.tscn")
 var raider_laser = preload("res://scenes/raider_laser.tscn")
 var y_increment_count = 0 # how many times the raiders move down the screen
 
+var raider_destroyed_count = 0
+var raider_total_count = ROWS * COLS
+
 # node references
 @onready var movement_timer = $MovementTimer
 @onready var laser_timer: Timer = $LaserTimer
@@ -25,7 +32,7 @@ var y_increment_count = 0 # how many times the raiders move down the screen
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# setup timers
-	movement_timer.timeout.connect(move_invaders)
+	movement_timer.timeout.connect(move_raiders)
 	laser_timer.timeout.connect(on_raider_shoot)
 	
 	# loads each raider and its properties
@@ -68,12 +75,13 @@ func _physics_process(_delta: float) -> void:
 	pass
 
 func spawn_raider(raider_config, spawn_pos: Vector2):
-	var raider = raider_scene.instantiate()
+	var raider = raider_scene.instantiate() as Raider
 	raider.config = raider_config
 	raider.global_position = spawn_pos
+	raider.raider_destroyed.connect(on_raider_destroyed)
 	add_child(raider)
 	
-func move_invaders():
+func move_raiders():
 	position.x += RAIDERS_POSITION_X_INCREMENT * direction
 	
 # each time it bounces, keep count so that after a certain amount of time I can decrease the timer to make the movement faster
@@ -94,3 +102,15 @@ func on_raider_shoot():
 	var laser = raider_laser.instantiate() as RaiderLaser
 	laser.global_position = random_raider_position
 	get_tree().root.add_child(laser)
+
+func on_raider_destroyed(points: int):
+	raider_destroyed.emit(points)
+	raider_destroyed_count += 1
+	
+	if raider_destroyed_count == raider_total_count:
+		game_won.emit()
+		laser_timer.stop()
+		movement_timer.stop()
+
+func _on_bottom_wall_area_entered(area: Area2D) -> void:
+	get_tree().change_scene_to_file("res://scenes/menus/game_over_menu.tscn")
