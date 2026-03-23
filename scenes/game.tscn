@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dsii7oh5ti0tl" path="res://scenes/ufo_spawner.tscn" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://bw8loavyfpald" path="res://scenes/menus/pause_menu.tscn" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://kxvhungcv55x" path="res://scenes/bunker.tscn" id="8_gee14"]
+[ext_resource type="Script" uid="uid://duqvfntpt45q2" path="res://scenes/point_counter.gd" id="9_0tnpc"]
+[ext_resource type="PackedScene" uid="uid://cnnwiu5tg21io" path="res://scenes/score_ui.tscn" id="10_vtaks"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhrr"]
 size = Vector2(14, 242)
@@ -25,7 +27,7 @@ texture = ExtResource("1_yqjtg")
 position = Vector2(-167, 97)
 
 [node name="RaiderSpawner" parent="." unique_id=2123867069 instance=ExtResource("3_lnu2h")]
-position = Vector2(0, -70)
+position = Vector2(0, -65)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=996137260]
 
@@ -74,5 +76,11 @@ position = Vector2(-9, 77)
 [node name="RightBunker" parent="Bunkers" unique_id=955593296 instance=ExtResource("8_gee14")]
 position = Vector2(78, 77)
 
+[node name="PointCounter" type="Node" parent="." unique_id=1543035893]
+script = ExtResource("9_0tnpc")
+
+[node name="ScoreUI" parent="." unique_id=1194544580 instance=ExtResource("10_vtaks")]
+
 [connection signal="area_entered" from="Walls/RightWall" to="RaiderSpawner" method="_on_right_wall_area_entered"]
 [connection signal="area_entered" from="Walls/LeftWall" to="RaiderSpawner" method="_on_left_wall_area_entered"]
+[connection signal="area_entered" from="Walls/BottomWall" to="RaiderSpawner" method="_on_bottom_wall_area_entered"]

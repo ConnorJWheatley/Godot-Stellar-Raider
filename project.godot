@@ -57,8 +57,8 @@ shoot={
 
 2d_physics/layer_1="player"
 2d_physics/layer_2="laser"
-2d_physics/layer_3="invader"
-2d_physics/layer_4="invader_projectile"
+2d_physics/layer_3="raider"
+2d_physics/layer_4="raider_projectile"
 2d_physics/layer_5="bunker"
 2d_physics/layer_6="wall"
 2d_physics/layer_7="ufo"

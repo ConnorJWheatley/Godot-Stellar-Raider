@@ -2,6 +2,8 @@ extends Area2D
 
 class_name Player
 
+signal life_lost(new_life_count: int)
+
 var MAX_SPEED = 80
 var speed : int
 var direction: Vector2
@@ -60,6 +62,9 @@ func on_player_destroyed():
 	if health_component.lives == 0:
 		get_tree().change_scene_to_file("res://scenes/menus/game_over_menu.tscn")
 	else:
+		# emit new life count to UI
+		life_lost.emit(health_component.lives)
+		
 		# set player back to start position
 		position.x = -167
 		animated_sprite.play("respawn")
