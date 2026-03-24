@@ -27,9 +27,9 @@ text = "0000"
 
 [node name="Lives" type="Label" parent="ScoreElements" unique_id=1127256419]
 layout_mode = 0
-offset_left = 157.215
+offset_left = 158.0
 offset_top = 191.035
-offset_right = 183.215
+offset_right = 184.0
 offset_bottom = 228.035
 size_flags_horizontal = 0
 size_flags_vertical = 8

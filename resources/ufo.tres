@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="UfoResource" format=3 uid="uid://bag5lou5c5wif"]
+
+[ext_resource type="Script" uid="uid://baqj3t1u61y4q" path="res://resources/ufo_config.gd" id="1_hbnao"]
+
+[resource]
+script = ExtResource("1_hbnao")
+points = 100
