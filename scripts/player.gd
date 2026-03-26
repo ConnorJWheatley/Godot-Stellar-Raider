@@ -81,5 +81,5 @@ func on_player_destroyed():
 		raider_laser_spawner.paused = false
 		ufo_spawn_timer.paused = false
 		if ufo != null:
-			(ufo.get_node("LaserPoint").get_node("SpawnTimer") as Timer).paused = false
 			ufo.speed = 75
+			(ufo.get_node("LaserPoint").get_node("SpawnTimer") as Timer).paused = false

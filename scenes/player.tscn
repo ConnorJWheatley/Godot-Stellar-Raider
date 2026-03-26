@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://cw7felm68a8v1" path="res://scripts/laser_shot.gd" id="3_dqkch"]
 [ext_resource type="PackedScene" uid="uid://b2ce5d1opch6r" path="res://scenes/laser.tscn" id="4_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://4b0sfwnlcr8l" path="res://graphics/player/player_death-sheet.png" id="5_qlg0r"]
-[ext_resource type="Script" uid="uid://bdk64e1hbpsi3" path="res://scenes/health_component.gd" id="6_tuyoq"]
+[ext_resource type="Script" uid="uid://bdk64e1hbpsi3" path="res://scripts/health_component.gd" id="6_tuyoq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
 atlas = ExtResource("5_qlg0r")

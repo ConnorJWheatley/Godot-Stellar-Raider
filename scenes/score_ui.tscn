@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cnnwiu5tg21io"]
 
 [ext_resource type="FontFile" uid="uid://defnbh00bnf7a" path="res://fonts/abduction2002.ttf" id="1_hoy1o"]
-[ext_resource type="Script" uid="uid://c1j7ip61gmy2o" path="res://scenes/score_ui.gd" id="1_yt0h2"]
+[ext_resource type="Script" uid="uid://c1j7ip61gmy2o" path="res://scripts/score_ui.gd" id="1_yt0h2"]
 
 [node name="ScoreUI" type="CanvasLayer" unique_id=1194544580]
 script = ExtResource("1_yt0h2")

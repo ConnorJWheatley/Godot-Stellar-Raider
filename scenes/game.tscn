@@ -8,14 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://dsii7oh5ti0tl" path="res://scenes/ufo_spawner.tscn" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://bw8loavyfpald" path="res://scenes/menus/pause_menu.tscn" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://kxvhungcv55x" path="res://scenes/bunker.tscn" id="8_gee14"]
-[ext_resource type="Script" uid="uid://duqvfntpt45q2" path="res://scenes/point_counter.gd" id="9_0tnpc"]
+[ext_resource type="Script" uid="uid://duqvfntpt45q2" path="res://scripts/point_counter.gd" id="9_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://cnnwiu5tg21io" path="res://scenes/score_ui.tscn" id="10_vtaks"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhrr"]
 size = Vector2(14, 242)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iywne"]
-size = Vector2(416, 15)
+size = Vector2(416, 8.5)
 
 [node name="Game" type="Node2D" unique_id=163042301]
 script = ExtResource("1_iywne")
@@ -57,7 +57,7 @@ collision_layer = 32
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BottomWall" unique_id=935230427]
-position = Vector2(0, 72)
+position = Vector2(0, 85)
 shape = SubResource("RectangleShape2D_iywne")
 
 [node name="UfoSpawner" parent="." unique_id=438315381 instance=ExtResource("6_p57ef")]
