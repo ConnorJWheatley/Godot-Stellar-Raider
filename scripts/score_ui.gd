@@ -10,8 +10,6 @@ var life_texture = preload("res://graphics/player/player_ship.png")
 func _ready() -> void:
 	life_counter.visible = false
 	points_counter.on_points_increased.connect(points_increased)
-	raider_spawner.game_won.connect(on_game_won)
-	raider_spawner.game_lost.connect(on_game_lost)
 	get_parent().get_node("Player").life_lost.connect(_update_life_count)
 	
 func points_increased(points):
@@ -33,9 +31,3 @@ func _update_life_count(new_life_count: int) -> void:
 		await get_tree().create_timer(0.25).timeout
 		life_counter.visible = false
 		await get_tree().create_timer(0.25).timeout
-
-func on_game_won():
-	pass
-	
-func on_game_lost():
-	pass
